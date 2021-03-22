@@ -40,7 +40,7 @@ La calificación de esta primera parte es la mitad de la práctica 2. Se asgina 
 
 Agendar reunión con el prof para que muestren el lanzamiento de los pipelines de procesamiento con kale vía kubeflow y minikube.
 
-Adjunten *screenshots* en un directorio de su repo para mostrar su uso de AWS, debe aparecer en el *screenshot* su nombre, clave única u otra forma de identificar su trabajo.
+Adjunten *screenshots* en un directorio de su repo para mostrar su uso de AWS, debe aparecer en el *screenshot* su nombre, clave única u otra forma de identificar su trabajo. En los *screenshots* incluyan la lista de experimentos ejecutados en *kubeflow* y algunos de los resultados, del *pipeline*.
 
 Pueden usar las cuentas de *Educate* si no usan GPUs, si quieren usar GPUs envíenme un mensaje por gitter para usar la cuenta no de *Educate*. También pueden usar las cuentas de *AWS* en las que tengan configurados los servicios necesarios para el despliegue de kale, kubeflow y minikube. **Recuerden que la imagen a utilizar es: `opt2-aws-educate-17-03-2021` y la localizan en la región de Virginia**.
 
