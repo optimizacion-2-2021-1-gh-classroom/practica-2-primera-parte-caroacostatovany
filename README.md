@@ -64,6 +64,8 @@ Actualicen la documentación de su paquete indicando que existen imágenes de *d
 
 El objetivo es realizar experimentos con las herramientas de kale, kubeflow, minikube para detectar con qué valores no funcionan sus programas. Cambien puntos iniciales, cambien criterios de paro, elijan diferentes ejemplos que los que utilizaron en los *tests* por ejemplo y reimplementen sus métodos que están en su paquete para mejorarlo y robustecerlo. Estos cambios de implementación deben de reflejarse automáticamente con *github actions* en la documentación del paquete, *tests* y en sus imágenes de *docker*.
 
+Coloquen su botón de *binder* en su `README.md`.
+
 Designen un horario en el mes de abril para que nos reunamos uds y yo y me muestren el lanzamiento de los *pipelines* de procesamiento corriendo en AWS. Esto lo agendamos vía *gitter* :)
 
 # Notas
