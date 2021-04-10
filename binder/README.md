@@ -6,7 +6,7 @@ Instructions to build docker image. Set:
 JUPYTERLAB_VERSION=2.1.4
 REPO_URL=caroacostatovany/optimizacion-2-practica-2-parte-1
 DIR=/home/<user>/<midir>
-BUILD_DIR=${DIR}dockerfiles/pkg/
+BUILD_DIR=${DIR}binder/
 CONTAINER_NAME=optimizacion-2-practica-2-parte-1
 ```
 *<midir> should be an empty directory
