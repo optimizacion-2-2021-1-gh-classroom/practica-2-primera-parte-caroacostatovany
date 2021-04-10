@@ -11,7 +11,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && echo "America/Mex
 
 RUN apt-get update && apt-get install -y $DEB_PACKAGES && pip3 install --upgrade pip
 
-
 RUN groupadd ${USER_BINDER}
 RUN useradd ${USER_BINDER} -g ${USER_BINDER} -m -s /bin/bash
 RUN echo 'jovyan ALL=(ALL:ALL) NOPASSWD:ALL' | (EDITOR='tee -a' visudo)
