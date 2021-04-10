@@ -26,6 +26,12 @@ Designen un horario en el mes de abril para que nos reunamos uds y yo y me muest
 
 Sábado 1/may/2021 11:59pm
 
+## Entregas
+
+- Para probar nuestro pipeline puedes hacer uso del siguiente botón de binder, éste contiene el paquete mex que desarrollamos [aquí](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-caroacostatovany.git) : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2021-1-gh-classroom/practica-2-primera-parte-caroacostatovany.git/main)
+
+
+
 ## Referencias
 
 - 
