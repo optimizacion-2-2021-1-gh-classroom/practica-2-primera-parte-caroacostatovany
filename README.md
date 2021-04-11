@@ -7,8 +7,8 @@
 |:---:|:---:|:---|
 | Eduardo Moreno | Eduardo-Moreno| Tests, actualizar pruebas en nuevo repositorio |
 | Cecilia Avilés | cecyar| Actualizar documentación, crear botón de binder (jupyterlab) |
-| Carolina Acosta | caroacostatovany| Crear imagen de docker con Kale y levantar instancia con Kubeflow |
-| Leonardo Ceja | lecepe00| Project manager, minikube-deployment |
+| Carolina Acosta | caroacostatovany| Crear imagen de docker con **Kale** y levantar instancia con **Kubeflow** |
+| Leonardo Ceja | lecepe00| Project manager, **minikube-deployment** |
 
 # ¿Qué hay que entregar/mostrar?
 
