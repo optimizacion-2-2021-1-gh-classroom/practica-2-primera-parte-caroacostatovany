@@ -14,9 +14,9 @@ spec:
                                 app: jupyterlab-opt-0-1-hostpath-pv-app
                 spec:
                         containers:
-                        - name: jupyterlab-mex
+                        - name: mex
                           imagePullPolicy: Always
-                          image: caroacostatovany/optimizacion-2-practica-1-parte-2:0.1
+                          image: caroacostatovany/optimizacion-2-practica-2-parte-1
                           ports:
                                   - containerPort: 8888
                           env:
