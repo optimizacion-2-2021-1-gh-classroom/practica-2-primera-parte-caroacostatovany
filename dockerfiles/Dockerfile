@@ -32,6 +32,7 @@ RUN pip install --quiet "git+https://github.com/optimizacion-2-2021-1-gh-classro
 RUN pip install matplotlib
 RUN pip install scipy
 RUN pip install networkx
+RUN pip install pytest
 
 VOLUME ["/shared_volume"]
 
