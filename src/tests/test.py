@@ -88,6 +88,7 @@ def test_net_problem():
     n_var_approx = 7
     n_cons_approx = 7
     matrix_net_approx = create_matrix(n_var_approx, n_cons_approx)
+    #Agregamos restricciones
     constrain(matrix_net_approx, '1,1,1,0,0,0,0,E,50')
     constrain(matrix_net_approx, '-1,0,0,1,0,0,0,E,40')
     constrain(matrix_net_approx, '0,-1,0,-1,1,0,0,E,0')
@@ -96,6 +97,7 @@ def test_net_problem():
     constrain(matrix_net_approx, '1,0,0,0,0,0,0,L,10')
     constrain(matrix_net_approx, '0,0,0,0,1,0,0,L,80')
     obj(matrix_net_approx, '2,4,9,3,1,3,2,0')
+    #Obtenemos solucion
     problem_approx = minz(matrix_net_approx)
     net_approx = problem_approx['min']
     problem_approx.pop('min')
