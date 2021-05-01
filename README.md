@@ -10,6 +10,7 @@
 | Carolina Acosta | caroacostatovany| Crear imagen de docker con **Kale** y levantar instancia con **Kubeflow** |
 | Leonardo Ceja | lecepe00| Project manager, **minikube-deployment** |
 
+
 # ¿Qué hay que entregar/mostrar?
 
 En la práctica 1 se realizaron las configuraciones necesarias para la construcción automática de *tests*, documentación de su paquete e imagen de *docker* con *github actions*. Hay que reutilizar lo realizado en esa práctica 1 (mejorar si es necesario) para construir una imagen de docker que tenga a Kale instalado. Esta imagen de docker llámenla diferente que la que hicieron en la práctica 1.
@@ -28,10 +29,9 @@ Sábado 1/may/2021 11:59pm
 
 ## Entregas
 
-- Para probar nuestro pipeline puedes hacer uso del siguiente botón de binder, éste contiene el paquete mex que desarrollamos [aquí](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-caroacostatovany.git) : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2021-1-gh-classroom/practica-2-primera-parte-caroacostatovany.git/main)
-
+- Para probar nuestro pipeline puedes hacer uso del siguiente botón de binder, éste contiene el paquete mex que desarrollamos [aquí](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-caroacostatovany.git) : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/optimizacion-2-2021-1-gh-classroom/practica-2-primera-parte-caroacostatovany.git/main?urlpath=lab)
 
 
 ## Referencias
 
-- 
+- [Paquete Mex](https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-caroacostatovany)
