@@ -2,9 +2,9 @@ import numpy as np
 from pytest import approx
 from scipy.optimize import linprog
 
-#import os
-#os.chdir("..")
-#os.system(setup.py)
+import os
+os.chdir("..")
+os.system("setup.py")
 
 from mex.simplex.simplex_networks import create_matrix
 from mex.simplex.problem_definition import constrain, obj, minz, maxz
