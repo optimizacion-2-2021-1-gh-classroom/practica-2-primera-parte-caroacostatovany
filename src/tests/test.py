@@ -3,8 +3,6 @@ from pytest import approx
 from scipy.optimize import linprog
 
 import os
-#os.chdir("..")
-#os.system("setup.py")
 os.system('pip install "git+https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-caroacostatovany.git#egg=mex&subdirectory=src"')
 
 from mex.simplex.simplex_networks import create_matrix
