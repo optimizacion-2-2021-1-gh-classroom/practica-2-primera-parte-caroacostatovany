@@ -36,4 +36,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run test
-        run: cd src && pip install --editable . && pytest tests/test.py
+        run: cd src && pytest tests/test.py
