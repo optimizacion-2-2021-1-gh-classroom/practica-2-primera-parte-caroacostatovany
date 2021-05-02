@@ -8,8 +8,6 @@ ENV HOME /home/${NB_USER}
 COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
-RUN pip install --no-cache-dir notebook==2.*
-RUN pip install --no-cache-dir jupyterhub
 
 USER ${NB_USER}
 
