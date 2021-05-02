@@ -34,6 +34,6 @@ USER root
 RUN apt-get update && apt-get install -y sudo nano less git wget curl python3-dev python3-pip python3-setuptools
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && apt-get install -y nodejs
 
-RUN jupyter notebook --generate-config && sed -i "s/#c.NotebookApp.password = .*/c.NotebookApp.password = u'sha1:115e429a919f:21911277af52f3e7a8b59380804140d9ef3e2380'/" /home/jovyan/.jupyter/jupyter_notebook_config.py
+RUN jupyter notebook --generate-config
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
