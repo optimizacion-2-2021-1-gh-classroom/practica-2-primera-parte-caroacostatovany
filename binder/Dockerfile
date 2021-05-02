@@ -28,8 +28,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 ENV SHELL /bin/bash
-COPY bashrc /etc/bash.bashrc
-RUN echo "set background=dark" >> /etc/vim/vimrc.local
 
 # Install latest KFP SDK & Kale & JupyterLab Extension
 RUN pip3 install --upgrade pip && \
