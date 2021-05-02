@@ -1,55 +1,39 @@
-#  Copyright 2020 The Kale Authors
-#
-#  Licensed under the Apache License, Version 2.0 (the "License");
-#  you may not use this file except in compliance with the License.
-#  You may obtain a copy of the License at
-#
-#       http://www.apache.org/licenses/LICENSE-2.0
-#
-#  Unless required by applicable law or agreed to in writing, software
-#  distributed under the License is distributed on an "AS IS" BASIS,
-#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#  See the License for the specific language governing permissions and
-#  limitations under the License.
+FROM ubuntu:bionic
 
-# Use tensorflow-1.14.0 as a base image, allowing the user to
-# speficy if they want GPU support, by setting IMAGE_TYPE to "gpu".
-ARG IMAGE_TYPE="cpu"
-FROM gcr.io/kubeflow-images-public/tensorflow-1.14.0-notebook-${IMAGE_TYPE}:v0.7.0
+ENV JUPYTERLAB_VERSION 2.0.0
+ENV USER_BINDER jovyan
+ENV PIP_PACKAGES_KALE="kubeflow-kale==0.6.1"
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && echo "America/Mexico_City" > /etc/timezone && apt-get install -y tzdata
 
-USER root
+RUN apt-get update && apt-get install -y \
+	    build-essential \
+            sudo \
+            nano \
+            less \
+            git \
+            python3-dev \
+            python3-pip \
+            python3-setuptools \
+            nodejs && pip3 install --upgrade pip
 
-# Install basic dependencies
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-        ca-certificates bash-completion tar less \
-        python-pip python-setuptools build-essential python-dev \
-        python3-pip python3-wheel && \
-    rm -rf /var/lib/apt/lists/*
-
-ENV SHELL /bin/bash
-
-# Install latest KFP SDK & Kale & JupyterLab Extension
-RUN pip3 install --upgrade pip && \
-    # XXX: Install enum34==1.1.8 because other versions lead to errors during
-    #  KFP installation
-    pip3 install --upgrade "enum34==1.1.8" && \
-    pip3 install --upgrade "jupyterlab>=2.0.0,<3.0.0" && \
-    pip3 install --upgrade kubeflow-kale && \
-    jupyter labextension install kubeflow-kale-labextension
-
-RUN pip3 install --quiet "git+https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-caroacostatovany.git#egg=mex&subdirectory=src"
-RUN pip3 install matplotlib
-RUN pip3 install scipy
-RUN pip3 install networkx
-RUN pip3 install pytest
+RUN groupadd ${USER_BINDER}
+RUN useradd ${USER_BINDER} -g ${USER_BINDER} -m -s /bin/bash
+RUN echo 'jovyan ALL=(ALL:ALL) NOPASSWD:ALL' | (EDITOR='tee -a' visudo)
+RUN echo 'jovyan:qwerty' | chpasswd
+RUN pip3 install jupyter jupyterlab==$JUPYTERLAB_VERSION --upgrade
+USER ${USER_BINDER}
+RUN pip3 install jupyter "jupyterlab>=2.0.0,<3.0.0" --upgrade
+RUN pip install $PIP_PACKAGES_KALE --upgrade
+RUN pip install --quiet "git+https://github.com/optimizacion-2-2021-1-gh-classroom/practica-1-segunda-parte-caroacostatovany.git#egg=mex&subdirectory=src"
+RUN pip install matplotlib
+RUN pip install scipy
+RUN pip install networkx
+RUN pip install pytest
 
 
-RUN echo "jovyan ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/jovyan
-WORKDIR /home/jovyan
-USER jovyan
+RUN jupyter labextension install kubeflow-kale-launcher
 
-CMD ["sh", "-c", \
-     "jupyter lab --notebook-dir=/home/jovyan --ip=0.0.0.0 --no-browser \
-      --allow-root --port=8888 --LabApp.token='' --LabApp.password='' \
-      --LabApp.allow_origin='*' --LabApp.base_url=${NB_PREFIX}"]
+
+RUN jupyter notebook --generate-config && sed -i "s/#c.NotebookApp.password = .*/c.NotebookApp.password = u'sha1:115e429a919f:21911277af52f3e7a8b59380804140d9ef3e2380'/" /home/jovyan/.jupyter/jupyter_notebook_config.py
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
