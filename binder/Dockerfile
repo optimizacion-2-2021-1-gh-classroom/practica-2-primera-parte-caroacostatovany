@@ -29,7 +29,7 @@ RUN pip install matplotlib
 RUN pip install scipy
 RUN pip install networkx
 RUN pip install pytest
-RUN pip install nodejs >=10.0.0
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && apt-get install -y nodejs
 
 RUN jupyter notebook --generate-config && sed -i "s/#c.NotebookApp.password = .*/c.NotebookApp.password = u'sha1:115e429a919f:21911277af52f3e7a8b59380804140d9ef3e2380'/" /home/jovyan/.jupyter/jupyter_notebook_config.py
 ENV LC_ALL C.UTF-8
